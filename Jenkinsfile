@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git 'https://github.com/ChandAWS/hello-world.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'dbea382b-2da8-4e8d-9695-e8ba5b711d89', url: 'https://github.com/ChandAWS/hello-world.git']]])
             }
         }
         
